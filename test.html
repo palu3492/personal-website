@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="vueScript.js"></script>
+</head>
+<body>
+    <div id="app" v-bind:title="floatMessage">
+        <p>{{ message }}</p>
+        <input v-model="message">
+        <ol v-if="seen">
+            <li v-for="todo in todos">
+                {{ todo.text }}
+            </li>
+        </ol>
+        <button v-on:click="hideTodos">Hide Todos</button>
+        <ol>
+            <todo-item
+                    v-for="item in groceryList"
+                    v-bind:todo="item"
+                    v-bind:key="item.id"
+            ></todo-item>
+        </ol>
+    </div>
+</body>
+</html>
