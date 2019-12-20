@@ -1,11 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-</head>
-<body>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Alex Palumbo</title>
+        <!-- styles -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style/index.css">
+        <link rel="stylesheet" href="style/app.css">
+        <!--scripts-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    </head>
+    <body>
+        <div id="app">
+            <header>
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <a class="navbar-brand" href="#">Alex Palumbo</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-</body>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Personal Project</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Class Project</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="container-fluid py-3 lower-nav-container d-none d-md-block" style="background: #f7f9fa">
+                    <p class="my-0">Personal Projects</p>
+                </div>
+            </header>
+            <section class="container-fluid p-0 m-0 row">
+                <div id="side-nav" class="d-none d-md-block col-md-2 p-0">
+                    <ul id="side-nav-list">
+                        <li class="py-2"><a href="">Websites</a></li>
+                        <li class="py-2"><a href="">Python Apps</a></li>
+                        <li class="py-2"><a href="">Java Apps</a></li>
+                    </ul>
+                </div>
+                <div id="content" class="col-12 col-sm-12 col-md-10 p-0">
+                    <div id="container">
+
+                    </div>
+                </div>
+            </section>
+        </div>
+    </body>
 </html>
