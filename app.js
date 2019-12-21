@@ -23,7 +23,8 @@ function setup(){
                 {text: 'text2', id:2},
                 {text: 'text3', id:3}
             ],
-            projects: {
+            projectsType: 'Personal',
+            personalProjects: {
                 'Websites': [
                     {
                         name: 'Flashcards',
@@ -52,6 +53,13 @@ function setup(){
                         content: ''
                     },
                 ]
+            }
+        },
+        computed: {
+            projects: function(){
+                if(this.projectsType === 'Personal'){
+                    return this.personalProjects;
+                }
             }
         },
         methods: {
