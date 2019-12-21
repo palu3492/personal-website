@@ -37,6 +37,9 @@
 #projects-title{
     border-bottom: solid 1px #b1b1b1;
 }
+.navbar-brand{
+    font-size: 1.4rem;
+}
 .lower-nav-container{
     /*-webkit-box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 2px 6px 2px rgba(60,64,67,.15);*/
     /*box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 2px 6px 2px rgba(60,64,67,.15);*/
@@ -46,14 +49,19 @@
     background: #658dcf24;
     cursor: pointer;
 }
+.projects-nav-item:hover{
+    background: #658dcf42;
+}
+.child-project{
+    cursor: pointer;
+}
+.child-project:hover{
+    background: #0000000d;
+}
 header{
     border-bottom: solid 1px #b1b1b1;
 }
 section{
     height: 0;
     flex-grow: 1;
-}
-
-li{
-    padding-left: 15px;
 }
