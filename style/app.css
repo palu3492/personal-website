@@ -2,8 +2,9 @@
 #app{
     display: flex;
     flex-direction: column;
-    width:100vw;
+    /*width:100vw;*/
     /*overflow-y: scroll;*/
+    min-height: 100vh;
 }
 #projects-nav{
     /*width: 268px;*/
@@ -61,6 +62,6 @@ header{
     border-bottom: solid 1px #b1b1b1;
 }
 section{
-    /*height: 0;*/
     flex-grow: 1;
+    align-content: flex-start;
 }
