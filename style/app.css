@@ -1,10 +1,16 @@
 
 #app{
-    display: flex;
-    flex-direction: column;
+    /*display: flex;*/
+    /*flex-direction: column;*/
     /*width:100vw;*/
     /*overflow-y: scroll;*/
-    min-height: 100vh;
+    /*min-height: 100vh;*/
+
+}
+#content{
+    /*flex-grow: 1;*/
+    align-content: flex-start;
+    height: calc(100vh - 4rem);
 }
 #projects-nav{
     /*width: 268px;*/
@@ -12,16 +18,20 @@
     /*-webkit-box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);*/
     /*box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);*/
     /*position: relative;*/
-    min-width: max-content;
+    /*min-width: max-content;*/
+
+}
+#projects-nav-content{
+    border-bottom: solid 1px #b1b1b1;
 }
 
-#content{
-    flex-grow: 1;
+#main{
+    /*flex-grow: 1;*/
     background: #e8eaed;
     display: flex;
     /*overflow-y: scroll;*/
     justify-content: center;
-    width: min-content;
+    /*width: min-content;*/
 }
 #container{
     /*-webkit-box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);*/
@@ -35,11 +45,30 @@
     background: white;
 }
 #projects-title{
-    border-bottom: solid 1px #b1b1b1;
+    /*border-bottom: solid 1px #b1b1b1;*/
+}
+.bd-navbar{
+    /*position: -webkit-sticky;*/
+    /*position: sticky;*/
+    /*top: 0;*/
+    min-height: 4rem;
 }
 .navbar-brand{
     font-size: 1.4rem;
 }
+/*.bd-sidebar{*/
+    /*!*flex: 0 1 320px;*!*/
+    /*!*position: -webkit-sticky;*!*/
+    /*!*position: sticky;*!*/
+    /*!*top: 4rem;*!*/
+    /*!*z-index: 1000;*!*/
+    /*height: calc(100vh - 4rem);*/
+    /*order: 0;*/
+/*}*/
+/*.bd-content{*/
+    /*!*-ms-flex-order: 1;*!*/
+    /*order: 1;*/
+/*}*/
 .lower-nav-container{
     /*-webkit-box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 2px 6px 2px rgba(60,64,67,.15);*/
     /*box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 2px 6px 2px rgba(60,64,67,.15);*/
@@ -48,6 +77,10 @@
 .projects-nav-item{
     background: #658dcf24;
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
 }
 .projects-nav-item:hover{
     background: #658dcf42;
@@ -59,9 +92,6 @@
     background: #0000000d;
 }
 header{
+    min-height: 4rem;
     border-bottom: solid 1px #b1b1b1;
-}
-section{
-    flex-grow: 1;
-    align-content: flex-start;
 }

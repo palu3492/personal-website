@@ -9,22 +9,14 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="style/index.css">
         <link rel="stylesheet" href="style/app.css">
-        <!--scripts-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
-        <script src="app.js"></script>
     </head>
     <body>
         <div id="app">
             <header>
-                <nav class="navbar navbar-expand-sm navbar-light">
+                <nav class="navbar navbar-expand flex-column flex-md-row navbar-light">
                     <a class="navbar-brand" href="#">Alex Palumbo</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav sm-auto">
+                    <div class="navbar-nav-scroll">
+                        <ul class="navbar-nav bd-navbar-nav flex-row">
                             <li class="nav-item active">
                                 <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
                             </li>
@@ -44,36 +36,47 @@
                     </div>
                 </nav>
             </header>
-            <section class="container-fluid p-0 m-0 row">
-                <div id="projects-nav" class="col-12 col-md-2 p-0">
-                    <div id="projects-title" class="py-2 px-3 child-project" data-toggle="collapse" data-target="#projects-nav-inner" aria-expanded="true">
-                        <span>Personal Projects</span>
-                        <span class="dropdown-toggle float-right ml-2"></span>
-                    </div>
-                    <div id="projects-nav-inner" class="collapse show">
-                        <div v-for="(childProjects, projectsType, i) in projects">
-                            <div class="py-2 px-3 projects-nav-item" data-toggle="collapse" :data-target="'#project-' + i" aria-expanded="false" data-parent="#projects-nav-inner">
-                                <span>{{ projectsType }}</span>
-                                <span class="dropdown-toggle float-right ml-2"></span>
+            <div class="container-fluid">
+                <div class="row flex-md-nowrap" id="content">
+                    <div id="projects-nav" class="col-12 col-md-3 col-xl-2 p-0 bd-sidebar">
+                        <div id="projects-nav-content">
+                            <div id="projects-title" class="py-2 px-3 navbar navbar-light navbar-expand-md">
+                                <span>Personal Projects</span>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#projects-nav-inner" aria-expanded="true" aria-label="Projects navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
                             </div>
-                            <div :id="'project-' + i" class="collapse">
-                                <p class="m-0 py-2 pl-4 child-project" v-for="project in childProjects" @click="clickProject(projectsType, project.name)">{{ project.name }}</p>
+                            <div id="projects-nav-inner" class="collapse show">
+                                <div v-for="(childProjects, projectsType, i) in projects">
+                                    <div class="py-2 px-3 projects-nav-item" data-toggle="collapse" :data-target="'#project-' + i" aria-expanded="false" data-parent="#projects-nav-inner">
+                                        <span>{{ projectsType }}</span>
+                                        <span class="dropdown-toggle float-right ml-2"></span>
+                                    </div>
+                                    <div :id="'project-' + i" class="collapse">
+                                        <p class="m-0 py-2 pl-4 child-project" v-for="project in childProjects" @click="clickProject(projectsType, project.name)">{{ project.name }}</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div id="content" class="col-12 col-md-auto p-0">
-                    <div id="container" class="col-12 col-md-11 p-0 mb-3">
-                        <div id="projects-nav-title" class="col mt-3">
-                            <p>{{ currentProjectType }} > {{ currentProject }}</p>
+                    <main id="main" class="col-12 col-md-9 p-0 col-xl-10 bd-content" role="main">
+                        <div id="container" class="col-12 col-md-11 p-0 mb-3">
+                            <div id="projects-nav-title" class="col mt-3 pl-3 p-2">
+                                <p class="m-0">{{ currentProjectType }} > {{ currentProject }}</p>
+                            </div>
+                            <div id="project-content" class="col mt-3 p-3">
+                                <h3>{{ projectName }}</h3>
+                                <p class="mb-0 pb-2">{{ content }}</p>
+                            </div>
                         </div>
-                        <div id="project-content" class="col mt-3">
-                            <h3>{{ projectName }}</h3>
-                            <p class="mb-0 pb-2">{{ content }}</p>
-                        </div>
-                    </div>
+                    </main>
                 </div>
-            </section>
+            </div>
         </div>
+        <!--scripts-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+        <script src="app.js"></script>
     </body>
 </html>
