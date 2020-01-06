@@ -19,6 +19,7 @@ function setup(){
                     'Flashcards': {
                         name: 'Flashcards',
                         images: [],
+                        subName: 'A study website that lets you create virtual flashcards',
                         content: 'Chapter too parties its letters nor. Cheerful but whatever ladyship disposed yet' +
                         'judgment. Lasted answer oppose to ye months no esteem. Branched is on an ecstatic directly it.' +
                         'In post mean shot ye. There out her child sir his lived. Design at uneasy me season of branch' +
@@ -27,7 +28,8 @@ function setup(){
                         'disposal. Behind sooner dining so window excuse he summer. Breakfast met certainty and' +
                         'fulfilled propriety led. Waited get either are wooded little her. Contrasted unreserved as mr' +
                         'particular collecting it everything as indulgence. Seems ask meant merry could put. Age old' +
-                        'begin had boy noisy table front whole given.'
+                        'begin had boy noisy table front whole given.',
+                        tags: [{name: 'React', color: '#61dafb'}, {name: 'Express', color: '#353535'}, {name: 'MySQL', color: '#f29221'}]
                     },
                     'Stage Designer': {
                         name: 'Stage Designer',
@@ -161,8 +163,14 @@ function setup(){
             projectName: function(){
                 return this.projects[this.currentProjectType][this.currentProject].name;
             },
+            projectSubName: function(){
+                return this.projects[this.currentProjectType][this.currentProject].subName;
+            },
             content: function(){
                 return this.projects[this.currentProjectType][this.currentProject].content;
+            },
+            tags: function(){
+                return this.projects[this.currentProjectType][this.currentProject].tags;
             }
         },
         methods: {
